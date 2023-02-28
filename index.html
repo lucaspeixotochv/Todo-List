@@ -24,29 +24,36 @@
   </head>
   <body>
     <div class="card">
-      <div class="card__header">
-        <h1>To do List</h1>
-      </div>
-      <div class="card__main">
-        <form action="" id="formulario">
-          <input type="text" name="" id="tarefa" />
-          <input type="submit" name="" id="botao" value="Adicionar tarefa" />
-        </form>
-        <div>
-          <ul class="lista"></ul>
+      <div class="flex-init">
+        <div class="card__header">
+          <h1>To do List</h1>
+        </div>
+        <div class="card__main">
+          <form action="" id="formulario">
+            <input type="text" name="" id="tarefa" />
+            <input type="submit" name="" id="botao" value="Adicionar tarefa" />
+          </form>
+          <div>
+            <ul class="lista"></ul>
+          </div>
         </div>
       </div>
-      <div class="card__footer">
+    
+      <div class="card__footer flex-final">
         <div class="footer_texto">
           <h2 class="footer__texto__tarefas">Tarefas</h2>
         </div>
 
-        <button class="add">
-          nova tarefa
+        <button class="add add__icon">
+          <span class="material-symbols-outlined">add</span>
+        </button>
+        <button class="add add__texto">
+          Adicionar Tarefa
           <span class="material-symbols-outlined">add</span>
         </button>
       </div>
     </div>
+  </div>
 
     <script src="js/main.js"></script>
   </body>

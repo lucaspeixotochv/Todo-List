@@ -1,6 +1,6 @@
 const form = document.querySelector("#formulario");
 const lista = document.querySelector(".lista");
-const add = document.querySelector(".add");
+const add = document.querySelectorAll(".add");
 const tarefa = document.querySelector("#tarefa");
 const fText = document.querySelector(".footer_texto");
 const textoFooter = document.querySelector(".footer__texto__tarefas");
@@ -84,9 +84,11 @@ function criarElemento() {
   atualizaLocalStorage();
 }
 
-add.addEventListener("click", () => {
-  tarefa.focus();
-});
+add.forEach((elemento) =>
+  elemento.addEventListener("click", () => {
+    tarefa.focus();
+  })
+);
 
 function atualizarTarefas(quantidadeDeTarefas) {
   spanFooter.innerText = "";

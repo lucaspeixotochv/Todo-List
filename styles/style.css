@@ -19,12 +19,19 @@ body {
 
 .card {
   background-color: #fff;
-  height: 60%;
-  width: 40%;
-  position: relative;
+  height: 70%;
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* HEADER */
+
+.flex-init {
+  height: 85%;
+}
 
 .card__header {
   height: 15%;
@@ -36,9 +43,9 @@ body {
 
 .card__header h1 {
   color: var(--purple);
-  font-size: 1.5em;
+  font-size: 1em;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
   font-weight: 700;
 }
 
@@ -54,7 +61,7 @@ body {
 
 #tarefa {
   width: 70%;
-  padding: 0.3em 1em;
+  padding: 0.3em 0.5em;
   outline-offset: 3px;
   outline-color: #5d78ff57;
   border: 1px solid rgb(0 0 0 / 0.3);
@@ -63,6 +70,7 @@ body {
 
 #botao {
   width: 50%;
+  min-width: 118px;
   background-color: var(--purple);
   border: none;
   color: var(--white);
@@ -77,7 +85,7 @@ body {
 
 .card__main {
   color: var(--purple);
-  max-height: 70%;
+  height: 85%;
   overflow: auto;
 }
 
@@ -102,15 +110,10 @@ body {
 /* FOOTER */
 .card__footer {
   height: 15%;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   border-top: solid 1px rgb(0 0 0 / 0.1);
-  padding: 0.8em;
+  padding: 0.8;
   box-sizing: border-box;
+  position: relative;
 }
 
 .card__footer h2 {
@@ -119,18 +122,66 @@ body {
   color: #ccc;
 }
 
-.add {
+.add__icon {
   background-color: transparent;
   border: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   cursor: pointer;
-  color: var(--purple);
+  background-color: var(--purple);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.add__icon span {
+  color: #fff;
 }
 
 .footer_texto {
+  height: 100%;
   display: flex;
+  align-items: center;
   gap: 0.5em;
   color: #ccc;
+  margin-left: 1em;
+}
+
+.add__texto {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .add__icon {
+    display: none;
+  }
+
+  .add__texto {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--purple);
+    margin-right: 1em;
+    cursor: pointer;
+  }
+
+  .card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card__header h1 {
+    font-size: 1.4em;
+  }
 }
