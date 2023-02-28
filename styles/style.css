@@ -77,6 +77,7 @@ body {
   padding: 0.5em 1em;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 1em;
 }
 
 .item__input {
@@ -89,11 +90,17 @@ body {
   overflow: auto;
 }
 
+.titulo {
+  font-size: 1.3em;
+  margin-left: 1em;
+}
+
 .lista {
   padding: 0.8em;
   display: flex;
   flex-direction: column;
   gap: 1.2em;
+  margin: 1.2em 0;
 }
 
 .lista__item {
@@ -102,7 +109,13 @@ body {
   gap: 1em;
 }
 
-.disable {
+.lista__item span {
+  color: #000;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.disable p {
   text-decoration: line-through;
   color: #ccc;
 }

@@ -1,5 +1,7 @@
 const form = document.querySelector("#formulario");
 const lista = document.querySelector(".lista");
+const listaConcluidas = document.querySelector(".concluidas");
+const tituloConcluidas = document.querySelector(".titulo_concluidas");
 const add = document.querySelectorAll(".add");
 const tarefa = document.querySelector("#tarefa");
 const fText = document.querySelector(".footer_texto");
@@ -16,7 +18,10 @@ function atualizaLocalStorage() {
 
 listaTarefas.forEach((elemento) => {
   criarElemento(elemento);
+  verificarConcluidas(elemento);
 });
+
+verificarConcluidas();
 
 form.addEventListener("submit", (evento) => {
   evento.preventDefault();
@@ -47,15 +52,19 @@ form.addEventListener("submit", (evento) => {
 
 function criarElemento() {
   lista.innerHTML = "";
+  listaConcluidas.innerHTML = "";
 
   let quantidadeDeTarefas = 0;
 
   listaTarefas.forEach((elemento, index) => {
     if (elemento.checar) {
-      lista.innerHTML += `
+      listaConcluidas.innerHTML += `
         <li class="lista__item disable" data-value="${index}">
           <input type="checkbox" class="item__input" checked />
           <p class="item__texto">${elemento.tarefa}</p>
+          <span class="material-symbols-outlined">
+          close
+          </span>
         </li>
       `;
     } else {
@@ -63,6 +72,9 @@ function criarElemento() {
         <li class="lista__item" data-value="${index}">
           <input type="checkbox" class="item__input" />
           <p class="item__texto">${elemento.tarefa}</p>
+          <span class="material-symbols-outlined">
+          close
+          </span>
         </li>
       `;
       quantidadeDeTarefas++;
@@ -78,6 +90,16 @@ function criarElemento() {
       indiceDoElemento = evento.target.parentElement.getAttribute("data-value");
       listaTarefas[indiceDoElemento].checar = evento.target.checked;
       criarElemento();
+      verificarConcluidas();
+    });
+  });
+  const remove = document.querySelectorAll(".material-symbols-outlined");
+
+  remove.forEach((icon) => {
+    icon.addEventListener("click", (evento) => {
+      indiceDoElemento = evento.target.parentElement.getAttribute("data-value");
+      listaTarefas.splice(indiceDoElemento, 1);
+      criarElemento();
     });
   });
 
@@ -89,6 +111,14 @@ add.forEach((elemento) =>
     tarefa.focus();
   })
 );
+
+function verificarConcluidas() {
+  if (listaConcluidas.children.length > 0) {
+    tituloConcluidas.style.display = "block";
+  } else {
+    tituloConcluidas.style.display = "none";
+  }
+}
 
 function atualizarTarefas(quantidadeDeTarefas) {
   spanFooter.innerText = "";
