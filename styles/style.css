@@ -1,0 +1,136 @@
+:root {
+  --purple: #133bfc;
+  --white: #fff;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 222, 213);
+  background: linear-gradient(
+    140deg,
+    rgba(255, 222, 213, 1) 7%,
+    rgba(255, 163, 152, 1) 92%
+  );
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  background-color: #fff;
+  height: 60%;
+  width: 40%;
+  position: relative;
+}
+
+/* HEADER */
+
+.card__header {
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.card__header h1 {
+  color: var(--purple);
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+}
+
+/* MAIN */
+#formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1em 0;
+  gap: 0.8em;
+}
+
+#tarefa {
+  width: 70%;
+  padding: 0.3em 1em;
+  outline-offset: 3px;
+  outline-color: #5d78ff57;
+  border: 1px solid rgb(0 0 0 / 0.3);
+  border-radius: 4px;
+}
+
+#botao {
+  width: 50%;
+  background-color: var(--purple);
+  border: none;
+  color: var(--white);
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.item__input {
+  cursor: pointer;
+}
+
+.card__main {
+  color: var(--purple);
+  max-height: 70%;
+  overflow: auto;
+}
+
+.lista {
+  padding: 0.8em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.lista__item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.disable {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+/* FOOTER */
+.card__footer {
+  height: 15%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: solid 1px rgb(0 0 0 / 0.1);
+  padding: 0.8em;
+  box-sizing: border-box;
+}
+
+.card__footer h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ccc;
+}
+
+.add {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--purple);
+}
+
+.footer_texto {
+  display: flex;
+  gap: 0.5em;
+  color: #ccc;
+}

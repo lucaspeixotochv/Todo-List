@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do List</title>
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ICONES GOOGLE -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <!-- ESTILO -->
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="card__header">
+        <h1>To do List</h1>
+      </div>
+      <div class="card__main">
+        <form action="" id="formulario">
+          <input type="text" name="" id="tarefa" />
+          <input type="submit" name="" id="botao" value="Adicionar tarefa" />
+        </form>
+        <div>
+          <ul class="lista"></ul>
+        </div>
+      </div>
+      <div class="card__footer">
+        <div class="footer_texto">
+          <h2 class="footer__texto__tarefas">Tarefas</h2>
+        </div>
+
+        <button class="add">
+          nova tarefa
+          <span class="material-symbols-outlined">add</span>
+        </button>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
