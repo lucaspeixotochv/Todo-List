@@ -100,6 +100,7 @@ function criarElemento() {
       indiceDoElemento = evento.target.parentElement.getAttribute("data-value");
       listaTarefas.splice(indiceDoElemento, 1);
       criarElemento();
+      verificarConcluidas();
     });
   });
 
