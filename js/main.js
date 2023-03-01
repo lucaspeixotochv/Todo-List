@@ -6,11 +6,8 @@ const add = document.querySelectorAll(".add");
 const tarefa = document.querySelector("#tarefa");
 const fText = document.querySelector(".footer_texto");
 const textoFooter = document.querySelector(".footer__texto__tarefas");
-const spanFooter = document.createElement("span");
 
 const listaTarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-
-fText.insertBefore(spanFooter, textoFooter);
 
 function atualizaLocalStorage() {
   localStorage.setItem("tarefas", JSON.stringify(listaTarefas));
@@ -21,6 +18,7 @@ listaTarefas.forEach((elemento) => {
   verificarConcluidas(elemento);
 });
 
+criarElemento();
 verificarConcluidas();
 
 form.addEventListener("submit", (evento) => {
@@ -122,6 +120,13 @@ function verificarConcluidas() {
 }
 
 function atualizarTarefas(quantidadeDeTarefas) {
-  spanFooter.innerText = "";
-  spanFooter.innerText = `${quantidadeDeTarefas}`;
+  if (quantidadeDeTarefas > 0) {
+    if (quantidadeDeTarefas == 1) {
+      textoFooter.innerHTML = `${quantidadeDeTarefas} Tarefa`;
+    } else {
+      textoFooter.innerHTML = `${quantidadeDeTarefas} Tarefas`;
+    }
+  } else {
+    textoFooter.innerHTML = "Nenhuma tarefa";
+  }
 }
