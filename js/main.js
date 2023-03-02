@@ -2,7 +2,7 @@ const form = document.querySelector("#formulario");
 const lista = document.querySelector(".lista");
 const listaConcluidas = document.querySelector(".concluidas");
 const tituloConcluidas = document.querySelector(".titulo_concluidas");
-const add = document.querySelectorAll(".add");
+const add = document.querySelector(".add");
 const tarefa = document.querySelector("#tarefa");
 const fText = document.querySelector(".footer_texto");
 const textoFooter = document.querySelector(".footer__texto__tarefas");
@@ -105,11 +105,10 @@ function criarElemento() {
   atualizaLocalStorage();
 }
 
-add.forEach((elemento) =>
-  elemento.addEventListener("click", () => {
-    tarefa.focus();
-  })
-);
+add.addEventListener("click", (evento) => {
+  evento.preventDefault();
+  tarefa.focus();
+});
 
 function verificarConcluidas() {
   if (listaConcluidas.children.length > 0) {

@@ -1,30 +1,31 @@
 :root {
-  --purple: #133bfc;
-  --white: #fff;
+  --primary: #537fe7;
+  --background: #fff;
+  --opaque: #ccc;
+  --out-input: #5d78ff57;
 }
 
 body {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(255, 222, 213);
-  background: linear-gradient(
-    140deg,
-    rgba(255, 222, 213, 1) 7%,
-    rgba(255, 163, 152, 1) 92%
-  );
+  background: linear-gradient(140deg, #2e3840 7%, #181d31 92%);
   font-family: "Poppins", sans-serif;
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--background);
   height: 70%;
   width: 80%;
   max-width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  border-radius: 4px;
+  margin-bottom: 2em;
 }
 
 /* HEADER */
@@ -42,7 +43,7 @@ body {
 }
 
 .card__header h1 {
-  color: var(--purple);
+  color: var(--primary);
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -63,18 +64,22 @@ body {
   width: 70%;
   padding: 0.3em 0.5em;
   outline-offset: 3px;
-  outline-color: #5d78ff57;
+  outline-color: var(--out-input);
   border: 1px solid rgb(0 0 0 / 0.3);
   border-radius: 4px;
 }
 
+#tarefa::placeholder {
+  font-family: "Poppins", sans-serif;
+}
+
 #botao {
-  width: 50%;
+  width: 25%;
   min-width: 118px;
-  background-color: var(--purple);
+  background-color: var(--primary);
   border: none;
-  color: var(--white);
-  padding: 0.5em 1em;
+  color: var(--background);
+  padding: 1em;
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 1em;
@@ -85,7 +90,7 @@ body {
 }
 
 .card__main {
-  color: var(--purple);
+  color: var(--primary);
   height: 85%;
   overflow: auto;
 }
@@ -117,7 +122,7 @@ body {
 
 .disable p {
   text-decoration: line-through;
-  color: #ccc;
+  color: var(--opaque);
 }
 
 /* FOOTER */
@@ -130,30 +135,7 @@ body {
 .card__footer h2 {
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #ccc;
-}
-
-.add__icon {
-  background-color: transparent;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  cursor: pointer;
-  background-color: var(--purple);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.add__icon span {
-  color: #fff;
-  font-size: 25px;
+  color: var(--opaque);
 }
 
 .footer_texto {
@@ -161,18 +143,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ccc;
+  color: var(--opaque);
 }
 
 .add__texto {
   display: none;
 }
 
-@media screen and (min-width: 768px) {
-  .add__icon {
-    display: none;
-  }
+/* Créditos */
 
+.creditos {
+  color: var(--background);
+}
+
+.creditos a {
+  color: var(--primary);
+}
+
+@media screen and (min-width: 768px) {
   .add__texto {
     display: flex;
     align-items: center;
@@ -180,7 +168,7 @@ body {
     border: none;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--purple);
+    color: var(--primary);
     margin-right: 1em;
     cursor: pointer;
   }
